@@ -15,6 +15,6 @@ jobs:
     - name: print branch
       run: echo "Branch name is ${{github.ref_name}}"
     - name: Repo name 
-      run: echo " Repo name: ${{ github.repository }}"
+      run: echo " Repo name: ${{ github.repository}}"
   
     

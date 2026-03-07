@@ -16,4 +16,6 @@ jobs:
       run: echo "Branch name is ${{github.ref_name}}"
     - name: List the file in repo
       run: ls -l
+    - name: Print runner operating system
+      run: echo "${{runner.os}}"
     

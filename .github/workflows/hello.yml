@@ -17,5 +17,7 @@ jobs:
     - name: List the file in repo
       run: ls -l
     - name: Print runner operating system
-      run: echo "${{runner.os}}"
+      run: echo  Runner OS is "${{runner.os}}"
+    - name: Top
+      run: top -h
     

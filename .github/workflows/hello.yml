@@ -11,6 +11,6 @@ jobs:
     - name: print greeting
       run: echo "Hello from GitHub Actions!"
     - name: Print current date and time
-      run: date '%y-%m-%d %H:%M:%S'
+      run: date "+%y-%m-%d %H:%M:%S"
   
     

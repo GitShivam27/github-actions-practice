@@ -19,5 +19,5 @@ jobs:
     - name: Print runner operating system
       run: echo  Runner OS is "${{runner.os}}"
     - name: Top
-      run: exit1
+      run: top
     

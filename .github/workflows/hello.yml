@@ -14,5 +14,7 @@ jobs:
       run: date "+%y-%m-%d %H:%M:%S"
     - name: print branch
       run: echo "Branch name is ${{github.ref_name}}"
+    - name: Repo name 
+      run: echo " Repo name: ${{ github.repository }}"
   
     

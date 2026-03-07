@@ -12,7 +12,8 @@ jobs:
       run: echo "Hello from GitHub Actions!"
     - name: Print current date and time
       run: date "+%y-%m-%d %H:%M:%S"
-    - name: print branch
+    - name: Print branch
       run: echo "Branch name is ${{github.ref_name}}"
-    - name: 
+    - name: List the file in repo
+      run: ls -l
     

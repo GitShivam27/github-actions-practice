@@ -1,0 +1,20 @@
+name: mannual trigger
+on:
+  workflow_dispatch:
+    input:
+      environment: 
+        description: "Select The Environment"
+        required: true
+        defualt: "stagging"  
+        type: choice
+        option:
+        - Production
+        - Stagging
+jobs:
+    deploy:
+    runs-on: ubuntu-lastest
+
+    steps:
+     - name: Print The Select Environment
+      run: echo "Deploying to environment:$
+

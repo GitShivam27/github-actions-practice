@@ -1,4 +1,4 @@
-name: mannual trigger
+name: mannual deploy
 on:
   workflow_dispatch:
       input:
@@ -15,5 +15,5 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         - name: Print selected environment
-          run: echo "Print selected environment" $
+          run: echo "Print selected environment: ${{github.event.inputs.environment}}"
 

@@ -1,21 +1,17 @@
-name: PR Check
-
+name: Print PR Branches
 on:
   pull_request:
-    branches:
-      - main
-    types: [opened, synchronize]
+    types: [opened, synchronize, reopened] # Triggers when PR is opened, updated, or reopened
 
 jobs:
-  pr-check:
+  print-branches:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
+      - name: Checkout code (optional, but good practice)
         uses: actions/checkout@v4
 
-      - name: Print PR branch
-        run: echo "PR check running for branch: ${{ github.head_ref }}"
-    
-    
-
+      - name: Print Source (Head) and Target (Base) Branches
+        run: |
+          echo "Source Branch (Head): ${{ github.head_ref }}"
+          echo "Target Branch (Base): ${{ github.event.pull_request.base.ref }}"
+        shell: bash

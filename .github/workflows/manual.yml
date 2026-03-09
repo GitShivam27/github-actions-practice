@@ -18,4 +18,4 @@ jobs:
     steps:
       - name: Print the input environment name
         run: |
-          echo "The selected environment is: ${{ github.event.inputs.environment_name }}
+          echo "The selected environment is: ${{ github.event.inputs.environment_name }}"

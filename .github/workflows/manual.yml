@@ -1,0 +1,21 @@
+name: Manual Environment Deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment_name:
+        description: 'Environment to deploy to (staging/production)'
+        required: true
+        type: choice
+        options:
+          - staging
+          - production
+        default: 'staging'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print the input environment name
+        run: |
+          echo "The selected environment is: ${{ github.event.inputs.environment_name }}

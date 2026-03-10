@@ -1,0 +1,24 @@
+name: Matrix
+on:
+    push:
+        branches: [main]
+jobs:
+    validate:
+        runs-on: ubuntu-latest
+        strategy:
+          fail-fast: true
+          matrix: 
+              python-version: [3.10, 3.11, 3.12]
+        steps:
+         - name: checkout code
+           uses: actions/checkout@v4
+           
+         - name: setup python
+           uses: actions/setup-python@v5
+           with: 
+             python version 3.14
+
+         - name: Print Python-Version
+           run: echo "python --version"
+             
+        

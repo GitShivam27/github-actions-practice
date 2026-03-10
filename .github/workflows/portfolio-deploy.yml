@@ -29,7 +29,7 @@ jobs:
             - name: Upload static Files
               uses: actions/upload-pages-artifact@v4
               with:
-                path: .
+                path: portfolio/
 
             - name: Deploy to Github Pages
               uses: actions/deploy-pages@v4

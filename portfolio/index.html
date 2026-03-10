@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Shivam Yadav | DevOps Desktop</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+<div class="topbar">
+Ubuntu DevOps Portfolio
+</div>
+
+
+<div class="desktop">
+
+<div class="icon" onclick="openWindow('about')">
+<img src="https://cdn-icons-png.flaticon.com/512/716/716784.png">
+<p>About</p>
+</div>
+
+<div class="icon" onclick="openWindow('skills')">
+<img src="https://cdn-icons-png.flaticon.com/512/716/716784.png">
+<p>Skills</p>
+</div>
+
+<div class="icon" onclick="openWindow('projects')">
+<img src="https://cdn-icons-png.flaticon.com/512/716/716784.png">
+<p>Projects</p>
+</div>
+
+<div class="icon" onclick="openWindow('terminalApp')">
+<img src="https://cdn-icons-png.flaticon.com/512/716/716784.png">
+<p>Terminal</p>
+</div>
+
+</div>
+
+
+
+<!-- ABOUT -->
+
+<div class="window" id="about">
+
+<div class="window-header">
+<span>About</span>
+<button onclick="closeWindow('about')">X</button>
+</div>
+
+<div class="window-body">
+
+<h2>Shivam Yadav</h2>
+
+<p>
+DevOps Engineer passionate about Linux, AWS, Docker, Kubernetes and CI/CD automation.
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- SKILLS -->
+
+<div class="window" id="skills">
+
+<div class="window-header">
+<span>Skills</span>
+<button onclick="closeWindow('skills')">X</button>
+</div>
+
+<div class="window-body">
+
+<div class="skill">Linux</div>
+<div class="skill">AWS</div>
+<div class="skill">Docker</div>
+<div class="skill">Kubernetes</div>
+<div class="skill">Git</div>
+<div class="skill">GitHub Actions</div>
+<div class="skill">CI/CD</div>
+
+</div>
+
+</div>
+
+
+
+<!-- PROJECTS -->
+
+<div class="window" id="projects">
+
+<div class="window-header">
+<span>Projects</span>
+<button onclick="closeWindow('projects')">X</button>
+</div>
+
+<div class="window-body">
+
+<h2>DevOps Pipeline</h2>
+
+<div class="pipeline">
+<div class="stage">Code</div>
+<div class="stage">Build</div>
+<div class="stage">Test</div>
+<div class="stage">Deploy</div>
+</div>
+
+
+<h2>Docker Container</h2>
+
+<div class="docker-container">
+🐳 Docker Container Running
+</div>
+
+
+<h2>Kubernetes Cluster</h2>
+
+<div class="cluster">
+
+<div class="node">
+Node 1
+<div class="pod"></div>
+<div class="pod"></div>
+</div>
+
+<div class="node">
+Node 2
+<div class="pod"></div>
+<div class="pod"></div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- TERMINAL -->
+
+<div class="window" id="terminalApp">
+
+<div class="window-header">
+<span>Terminal</span>
+<button onclick="closeWindow('terminalApp')">X</button>
+</div>
+
+<div class="window-body">
+
+<div class="terminal">
+
+<div class="terminal-header">
+shivam@devops:~
+</div>
+
+<div id="terminal-output"></div>
+
+<input id="terminal-input" placeholder="type command..." />
+
+</div>
+
+</div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -27,7 +27,7 @@ jobs:
 
              # static code artifacts
             - name: Upload static Files
-              uses: actions/upload-artifact@v4
+              uses: actions/upload-pages-artifact@v4
               with:
                 path: .
 

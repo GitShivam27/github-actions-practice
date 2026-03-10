@@ -1,180 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivam Yadav | DevOps Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --glass: rgba(255, 255, 255, 0.07);
+            --glass-border: rgba(255, 255, 255, 0.15);
+            --accent: #00d2ff;
+            --text-main: #e0e0e0;
+        }
 
-<title>Shivam Yadav | DevOps Desktop</title>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+        body {
+            background: radial-gradient(circle at top right, #16222a, #3a6073);
+            background-attachment: fixed;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
 
+        /* Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(15, 32, 39, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #fff;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* Glass Utility */
+        .glass {
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .glass:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            border-color: rgba(0, 210, 255, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 10%;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            background: linear-gradient(to right, #fff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .hero h3 {
+            font-weight: 300;
+            color: #94a3b8;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 35px;
+            border-radius: 50px;
+            background: var(--accent);
+            color: #0f2027;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 210, 255, 0.3);
+        }
+
+        .btn:hover {
+            filter: brightness(1.1);
+            transform: scale(1.05);
+        }
+
+        /* General Sections */
+        section {
+            padding: 100px 10%;
+        }
+
+        h2.section-title {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        h2.section-title::after {
+            content: "";
+            height: 1px;
+            flex-grow: 1;
+            background: var(--glass-border);
+        }
+
+        /* Skills Tags */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .tag {
+            padding: 8px 18px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: var(--accent);
+        }
+
+        /* Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card h3 {
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+
+        /* Contact Items */
+        .contact-info p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.8rem;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        @media (max-width: 768px) {
+            nav ul { display: none; } /* Simplified for mobile */
+            section { padding: 60px 5%; }
+        }
+    </style>
 </head>
-
-
 <body>
 
-<div class="topbar">
-Ubuntu DevOps Portfolio
-</div>
+<nav>
+    <div class="logo">SY.</div>
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
 
+<header class="hero">
+    <div class="hero-content glass">
+        <h3>System Orchestrator</h3>
+        <h1>Shivam Yadav</h1>
+        <p style="max-width: 600px; margin: 0 auto 30px;">
+            Bridging the gap between development and operations. I specialize in 
+            cloud-native ecosystems, high-availability clusters, and automated delivery.
+        </p>
+        <a class="btn" href="#contact">Explore My Work</a>
+    </div>
+</header>
 
-<div class="desktop">
+<section id="about">
+    <h2 class="section-title">01. About Me</h2>
+    <div class="glass">
+        <p>I am a DevOps Engineer obsessed with <strong>efficiency</strong>. My journey involves turning complex, manual deployments into one-click automated masterpieces. I thrive in Linux environments and love deconstructing bottlenecks in the SDLC.</p>
+    </div>
+</section>
 
-<div class="icon" onclick="openWindow('about')">
-<img src="https://cdn-icons-png.flaticon.com/512/716/716784.png">
-<p>About</p>
-</div>
+<section id="skills">
+    <h2 class="section-title">02. Tech Stack</h2>
+    <div class="skills-container">
+        <span class="tag">Kubernetes</span>
+        <span class="tag">Docker</span>
+        <span class="tag">Terraform</span>
+        <span class="tag">AWS Cloud</span>
+        <span class="tag">Jenkins / GH Actions</span>
+        <span class="tag">Prometheus & Grafana</span>
+        <span class="tag">Ansible</span>
+        <span class="tag">Python/Shell</span>
+        <span class="tag">Nginx</span>
+    </div>
+</section>
 
-<div class="icon" onclick="openWindow('skills')">
-<img src="https://cdn-icons-png.flaticon.com/512/716/716784.png">
-<p>Skills</p>
-</div>
+<section id="projects">
+    <h2 class="section-title">03. Featured Projects</h2>
+    <div class="grid">
+        <div class="glass project-card">
+            <h3>Immutable Infrastructure</h3>
+            <p>Architected a multi-region AWS environment using Terraform, ensuring 99.9% uptime and zero-drift configurations.</p>
+        </div>
+        <div class="glass project-card">
+            <h3>K8s Cluster Migration</h3>
+            <p>Successfully migrated legacy monolithic services into a microservices architecture on EKS with Istio service mesh.</p>
+        </div>
+        <div class="glass project-card">
+            <h3>CI/CD Security Scan</h3>
+            <p>Integrated SonarQube and Snyk into Jenkins pipelines to automate vulnerability assessment for 50+ repositories.</p>
+        </div>
+    </div>
+</section>
 
-<div class="icon" onclick="openWindow('projects')">
-<img src="https://cdn-icons-png.flaticon.com/512/716/716784.png">
-<p>Projects</p>
-</div>
+<section id="contact">
+    <h2 class="section-title">04. Get In Touch</h2>
+    <div class="glass contact-info">
+        <p><strong>Email:</strong> yshivam59@gmail.com</p>
+        <p><strong>LinkedIn:</strong> linkedin.com/in/shivamyadav</p>
+        <p><strong>Location:</strong> India / Remote</p>
+        <center style="margin-top: 20px;">
+            <a href="mailto:shivam@example.com" class="btn">Send a Message</a>
+        </center>
+    </div>
+</section>
 
-<div class="icon" onclick="openWindow('terminalApp')">
-<img src="https://cdn-icons-png.flaticon.com/512/716/716784.png">
-<p>Terminal</p>
-</div>
-
-</div>
-
-
-
-<!-- ABOUT -->
-
-<div class="window" id="about">
-
-<div class="window-header">
-<span>About</span>
-<button onclick="closeWindow('about')">X</button>
-</div>
-
-<div class="window-body">
-
-<h2>Shivam Yadav</h2>
-
-<p>
-DevOps Engineer passionate about Linux, AWS, Docker, Kubernetes and CI/CD automation.
-</p>
-
-</div>
-
-</div>
-
-
-
-<!-- SKILLS -->
-
-<div class="window" id="skills">
-
-<div class="window-header">
-<span>Skills</span>
-<button onclick="closeWindow('skills')">X</button>
-</div>
-
-<div class="window-body">
-
-<div class="skill">Linux</div>
-<div class="skill">AWS</div>
-<div class="skill">Docker</div>
-<div class="skill">Kubernetes</div>
-<div class="skill">Git</div>
-<div class="skill">GitHub Actions</div>
-<div class="skill">CI/CD</div>
-
-</div>
-
-</div>
-
-
-
-<!-- PROJECTS -->
-
-<div class="window" id="projects">
-
-<div class="window-header">
-<span>Projects</span>
-<button onclick="closeWindow('projects')">X</button>
-</div>
-
-<div class="window-body">
-
-<h2>DevOps Pipeline</h2>
-
-<div class="pipeline">
-<div class="stage">Code</div>
-<div class="stage">Build</div>
-<div class="stage">Test</div>
-<div class="stage">Deploy</div>
-</div>
-
-
-<h2>Docker Container</h2>
-
-<div class="docker-container">
-🐳 Docker Container Running
-</div>
-
-
-<h2>Kubernetes Cluster</h2>
-
-<div class="cluster">
-
-<div class="node">
-Node 1
-<div class="pod"></div>
-<div class="pod"></div>
-</div>
-
-<div class="node">
-Node 2
-<div class="pod"></div>
-<div class="pod"></div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-<!-- TERMINAL -->
-
-<div class="window" id="terminalApp">
-
-<div class="window-header">
-<span>Terminal</span>
-<button onclick="closeWindow('terminalApp')">X</button>
-</div>
-
-<div class="window-body">
-
-<div class="terminal">
-
-<div class="terminal-header">
-shivam@devops:~
-</div>
-
-<div id="terminal-output"></div>
-
-<input id="terminal-input" placeholder="type command..." />
-
-</div>
-
-</div>
-
-</div>
-
-
-<script src="script.js"></script>
+<footer>
+    &copy; 2026 Shivam Yadav • Built with Focus & Glassmorphism
+</footer>
 
 </body>
 </html>

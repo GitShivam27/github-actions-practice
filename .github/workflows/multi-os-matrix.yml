@@ -1,0 +1,26 @@
+name: Multi-OS Info Workflow
+
+on: [push, workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    steps:
+    - name: Print OS, Hostname, and User
+      run: |
+        # Commands for Linux and macOS runners
+        if [ "$RUNNER_OS" == "Linux" ] || [ "$RUNNER_OS" == "macOS" ]; then
+          echo "OS: $RUNNER_OS"
+          echo "Hostname: $(hostname)"
+          echo "User: $(whoami)"
+          
+        # Commands for Windows runners (using PowerShell)
+        elif [ "$RUNNER_OS" == "Windows" ]; then
+          echo "OS: $env:RUNNER_OS"
+          echo "Hostname: $env:COMPUTERNAME"
+          echo "User: $env:USERNAME"
+        fi
+      shell: bash

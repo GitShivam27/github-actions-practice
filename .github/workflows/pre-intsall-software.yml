@@ -8,7 +8,8 @@ jobs:
 
         steps:
             - name: Print Version
-              run: docker --version
+              run: | 
+                   docker --version
                    python --version
                    node --version
                    git --version

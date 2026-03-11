@@ -1,0 +1,14 @@
+name: Ubuntu-Runner
+on: 
+    workflow_dispatch:
+
+jobs:
+    Print-software-version:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Print Version
+              run: docker --version
+                   python --version
+                   node --version
+                   git --version

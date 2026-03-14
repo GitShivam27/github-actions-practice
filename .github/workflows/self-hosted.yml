@@ -6,7 +6,7 @@ on:
 jobs:
     self-hosted-EC2:
     
-        runs-on: self-hosted
+        runs-on: [self-hosted, My-Linux-Machine]
 
         steps:
               

@@ -13,6 +13,10 @@ jobs:
               working-directory: /path/on/your/machine
 
         steps:
+
+            - name: Run a script
+              run: ./script.sh 
+              
             - name: Print Hostname
               run: hostname
 

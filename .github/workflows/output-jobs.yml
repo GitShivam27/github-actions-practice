@@ -14,7 +14,7 @@ jobs:
         steps:
             - name: Generate Todays Date
               id: date_steps
-              run: echo "Todays Date is :'%Y-%M-%D'"
+              run: echo "Todays Date is :(date +'%Y-%M-%D')"
 
    # print date:
          #runs-on: ubuntu-latest

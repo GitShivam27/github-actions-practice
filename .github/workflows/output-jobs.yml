@@ -8,7 +8,7 @@ jobs:
         runs-on: ubuntu-latest
         
         outputs:
-            today_date: ${{ steps.date_steps.output_date }} 
+            today_date: ${{ steps.date_step.output_date }} 
 
 
         steps:

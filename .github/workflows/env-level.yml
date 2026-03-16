@@ -20,3 +20,9 @@ jobs:
           echo "App Name: $APP_NAME"
           echo "Environment: $ENVIRONMENT"
           echo "Version: $VERSION"
+
+      - name: Print SHA
+        run: echo "The Commit SHA is :${{ github.sha }}"
+
+      - name: Print the actor
+        run: echo "User :${{ github.actor }}"

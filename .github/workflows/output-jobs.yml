@@ -8,13 +8,13 @@ jobs:
         runs-on: ubuntu-latest
         
         outputs:
-            today_date: ${{ steps.date_steps.output_date }} >>GITHUB_OUTPUT
+            today_date: ${{ steps.date_steps.output_date }} 
 
 
         steps:
             - name: Generate Todays Date
               id: date_steps
-              run: echo "Todays Date is :(date +'%y-%m-%d')"
+              run: echo "Todays Date is :(date +'%y-%m-%d')" >>GITHUB_OUTPUT
 
    # print date:
          #runs-on: ubuntu-latest

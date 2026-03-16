@@ -1,0 +1,33 @@
+name: Multi-Jobs-Workflows
+
+on: 
+    push:
+        branches: [main]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout code
+              uses: actions/checkout@v4
+
+            - name: Print Building the app
+              run: echo "Buiding the App"
+
+    Test:
+        needs: build
+        runs-on: ubuntu-latest
+        steps:
+          - name: Print Running Test
+            run: echo "Running Test"
+
+    Deploy:
+      needs: [build, Test]
+      runs-on: ubuntu-latest
+      steps:
+        - name: Print Deploying The App
+          run: echo ".....Deploying........"
+    
+                   
+
+          

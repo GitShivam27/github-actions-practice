@@ -1,0 +1,32 @@
+name: Conditional_Workflows
+on:
+    push: 
+    pull_request:
+
+jobs:
+    push-only-jobs:
+    
+        if: github.event_name == 'push'
+        
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: code checkout
+              uses: actions/checkout@v4
+
+            - name: Run only when the brancg is main
+            
+            
+              if: github.ref_name == 'main'
+            
+              run: echo "This step runs only on main branch"
+            - name: Intenstional failure
+              id: fail-steps
+              run: exit 1
+              continue-on-error: true
+
+            - name: Run if previous steps is failed
+              if: failure()
+              run: echo "Running after previous steps failed"
+        
+        

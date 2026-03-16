@@ -1,0 +1,21 @@
+name: Output-Jobs
+on: 
+    workflow_dispatch:
+
+
+jobs:
+    get-date:
+        runs-on: ubuntu-latest
+        
+        outputs:
+            today_date: ${{ steps.date_steps.output_date }}
+
+
+        steps:
+            - name: Generate Todays Date
+              id: date_steps
+              run: echo "Todays Date is :'%Y-%M-%D'"
+
+   # print date:
+         #runs-on: ubuntu-latest
+         
